@@ -4,6 +4,12 @@
     <menu id="application" caption="msg://com.company.jmixexpenses/menu.application" insertBefore="administration">
         <item screen="User.browse" caption="msg://com.company.jmixexpenses.screen.user/UserBrowse.caption"/>
         <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="Employee.browse" caption="msg://com.company.jmixexpenses.screen.employee/employeeBrowse.menu"/>
+        <item screen="Subdivision.browse"
+              caption="msg://com.company.jmixexpenses.screen.subdivision/subdivisionBrowse.menu"/>
+        <item screen="Expense.browse" caption="msg://com.company.jmixexpenses.screen.expense/expenseBrowse.menu"/>
+        <item screen="TypeOfExpense.browse"
+              caption="msg://com.company.jmixexpenses.screen.typeofexpense/typeOfExpenseBrowse.menu"/>
     </menu>
 
 </menu-config>
