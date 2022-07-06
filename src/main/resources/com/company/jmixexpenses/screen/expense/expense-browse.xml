@@ -15,6 +15,7 @@
                     <![CDATA[select e from Expense e]]>
                 </query>
             </loader>
+            <instance id="employeeDc" property="employee"/>
         </collection>
     </data>
     <facets>
@@ -48,7 +49,7 @@
             </actions>
             <columns>
                 <column id="typeOfExpense"/>
-                <column id="employee"/>
+                <column id="employee.fullName"/>
                 <column id="date"/>
                 <column id="amount"/>
                 <column id="document"/>

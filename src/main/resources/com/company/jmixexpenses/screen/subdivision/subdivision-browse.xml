@@ -4,17 +4,31 @@
         caption="msg://subdivisionBrowse.caption"
         focusComponent="subdivisionsTable">
     <data readOnly="true">
-        <collection id="subdivisionsDc"
-                    class="com.company.jmixexpenses.entity.Subdivision">
-            <fetchPlan extends="_base"/>
+        <keyValueCollection id="subdivisionsDc">
             <loader id="subdivisionsDl">
                 <query>
-                    <![CDATA[select e from Subdivision e]]>
+                    <![CDATA[select s, (select count(em) from Employee em where em.subdivision.id = s.id) from Subdivision s]]>
                 </query>
             </loader>
-        </collection>
+            <properties>
+                <property name="subdivision" class="com.company.jmixexpenses.entity.Subdivision"/>
+                <property name="amountOfStaff" datatype="decimal"/>
+            </properties>-->
+        </keyValueCollection>
     </data>
     <facets>
+        <editorScreen id="editorScreen"
+                      editMode="CREATE"
+                      entityClass="com.company.jmixexpenses.entity.Subdivision"
+                      onButton="createBtn"
+                      addFirst="true">
+        </editorScreen>
+        <editorScreen id="editorScreen"
+                      editMode="EDIT"
+                      entityClass="com.company.jmixexpenses.entity.Subdivision"
+                      onButton="editBtn"
+                      addFirst="true">
+        </editorScreen>
         <dataLoadCoordinator auto="true"/>
         <screenSettings id="settingsFacet" auto="true"/>
     </facets>
@@ -39,19 +53,20 @@
                     width="100%"
                     dataContainer="subdivisionsDc">
             <actions>
-                <action id="create" type="create"/>
+                <!--<action id="create" type="create"/>-->
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="name"/>
-                <column id="description"/>
+                <column id="subdivision.name"/>
+                <column id="subdivision.description"/>
+                <column id="amountOfStaff" caption="Amount of staff"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="subdivisionsTable.create"/>
-                <button id="editBtn" action="subdivisionsTable.edit"/>
+                <button id="createBtn" icon="CREATE_ACTION" primary="true" caption="Create"/>
+                <button id="editBtn" icon="EDIT_ACTION" caption="Edit"/>
                 <button id="removeBtn" action="subdivisionsTable.remove"/>
             </buttonsPanel>
         </groupTable>
