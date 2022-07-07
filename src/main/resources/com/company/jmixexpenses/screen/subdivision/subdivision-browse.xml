@@ -4,31 +4,16 @@
         caption="msg://subdivisionBrowse.caption"
         focusComponent="subdivisionsTable">
     <data readOnly="true">
-        <keyValueCollection id="subdivisionsDc">
+        <collection id="subdivisionsDc"
+                    class="com.company.jmixexpenses.entity.Subdivision">
             <loader id="subdivisionsDl">
                 <query>
-                    <![CDATA[select s, (select count(em) from Employee em where em.subdivision.id = s.id) from Subdivision s]]>
+                    <![CDATA[select s from Subdivision s]]>
                 </query>
             </loader>
-            <properties>
-                <property name="subdivision" class="com.company.jmixexpenses.entity.Subdivision"/>
-                <property name="amountOfStaff" datatype="decimal"/>
-            </properties>-->
-        </keyValueCollection>
+        </collection>
     </data>
     <facets>
-        <!--<editorScreen id="editorScreen"
-                      editMode="CREATE"
-                      entityClass="com.company.jmixexpenses.entity.Subdivision"
-                      onButton="createBtn"
-                      addFirst="true">
-        </editorScreen>
-        <editorScreen id="editorScreen"
-                      editMode="EDIT"
-                      entityClass="com.company.jmixexpenses.entity.Subdivision"
-                      onButton="editBtn"
-                      addFirst="true">
-        </editorScreen>-->
         <dataLoadCoordinator auto="true"/>
         <screenSettings id="settingsFacet" auto="true"/>
     </facets>
@@ -58,8 +43,8 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="subdivision.name"/>
-                <column id="subdivision.description"/>
+                <column id="name"/>
+                <column id="description"/>
                 <column id="amountOfStaff" caption="msg://amountOfStaffCaption"/>
             </columns>
             <simplePagination/>
