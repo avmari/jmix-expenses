@@ -41,6 +41,7 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <action id="run" type="runReport"/>
             </actions>
             <columns>
                 <column id="name"/>
@@ -53,6 +54,9 @@
                 <button id="createBtn" action="subdivisionsTable.create"/>
                 <button id="editBtn" action="subdivisionsTable.edit"/>
                 <button id="removeBtn" action="subdivisionsTable.remove"/>
+                <button id="runReportBtn"
+                        action="subdivisionsTable.run"
+                        caption="msg://runReportBtnCaption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
