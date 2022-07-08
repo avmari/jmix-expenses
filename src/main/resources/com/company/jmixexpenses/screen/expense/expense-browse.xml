@@ -15,7 +15,6 @@
                     <![CDATA[select e from Expense e]]>
                 </query>
             </loader>
-            <instance id="employeeDc" property="employee"/>
         </collection>
     </data>
     <facets>
