@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="jmix-expenses" context="!cuba">
+
+        <insert tableName="SUBDIVISION" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="6eb69cf5-8804-e338-cf2f-d1a160f3406e"/>
+            <column name="NAME" value="Accounting"/>
+            <column name="DESCRIPTION" value="null"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:00:43.196"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-07 12:42:17.413"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="SUBDIVISION" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="ca6bd973-70b0-020e-edcc-11e45ec72517"/>
+            <column name="NAME" value="Food"/>
+            <column name="DESCRIPTION" value="null"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-07 15:48:55.057"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-07 15:48:55.057"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="SUBDIVISION" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="cacf10be-ddb1-abfc-5604-28fc0646cac4"/>
+            <column name="NAME" value="Hobby"/>
+            <column name="DESCRIPTION" value="null"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-07 12:42:26.419"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-07 12:42:26.419"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet id="2" author="jmix-expenses" context="!cuba">
+
+        <insert tableName="EMPLOYEE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="01b66c30-49d0-1c6c-83d8-03422acdb75e"/>
+            <column name="FULL_NAME" value="Leopold Leopoldovich"/>
+            <column name="SUBDIVISION_ID" value="6eb69cf5-8804-e338-cf2f-d1a160f3406e"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="EMPLOYEE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="1246fdbe-f11e-2ce2-5863-fb7f428edfb6"/>
+            <column name="FULL_NAME" value="Mikhail"/>
+            <column name="SUBDIVISION_ID" value="6eb69cf5-8804-e338-cf2f-d1a160f3406e"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-07 18:02:02.989"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-07 18:02:02.989"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet id="3" author="jmix-expenses" context="!cuba">
+
+        <insert tableName="TYPE_OF_EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="a192f049-fa63-a85e-eb67-d998f76dafb2"/>
+            <column name="NAME" value="Sport"/>
+            <column name="FUNDS_LIMIT" value="1000"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-06 19:59:38.683"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-06 19:59:38.683"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="TYPE_OF_EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="fdeb1523-3067-d089-b22b-43d1c335ef67"/>
+            <column name="NAME" value="Food"/>
+            <column name="FUNDS_LIMIT" value="1000"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-06 16:34:47.736"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-06 16:34:47.736"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet id="4" author="jmix-expenses" context="!cuba">
+
+        <insert tableName="EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="40f9ddba-de97-0883-5009-f6fb8237ba1a"/>
+            <column name="TYPE_OF_EXPENSE_ID" value="fdeb1523-3067-d089-b22b-43d1c335ef67"/>
+            <column name="EMPLOYEE_ID" value="01b66c30-49d0-1c6c-83d8-03422acdb75e"/>
+            <column name="DATE_" value="2022-06-06"/>
+            <column name="AMOUNT" value="500"/>
+            <column name="DOCUMENT" value="fs://2022/07/06/d49b9daa-708d-45b8-e0a3-c1b76d6382b2.txt?name=ff.txt"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="4281b3c1-dce7-778e-ceb7-220ef0337682"/>
+            <column name="TYPE_OF_EXPENSE_ID" value="fdeb1523-3067-d089-b22b-43d1c335ef67"/>
+            <column name="EMPLOYEE_ID" value="01b66c30-49d0-1c6c-83d8-03422acdb75e"/>
+            <column name="DATE_" value="2022-06-10"/>
+            <column name="AMOUNT" value="500"/>
+            <column name="DOCUMENT" value="fs://2022/07/06/d49b9daa-708d-45b8-e0a3-c1b76d6382b2.txt?name=ff.txt"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="4ddc43b2-3185-c0cd-79fa-2f45fc9f75df"/>
+            <column name="TYPE_OF_EXPENSE_ID" value="fdeb1523-3067-d089-b22b-43d1c335ef67"/>
+            <column name="EMPLOYEE_ID" value="01b66c30-49d0-1c6c-83d8-03422acdb75e"/>
+            <column name="DATE_" value="2022-07-06"/>
+            <column name="AMOUNT" value="500"/>
+            <column name="DOCUMENT" value="fs://2022/07/06/d49b9daa-708d-45b8-e0a3-c1b76d6382b2.txt?name=ff.txt"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="56035844-f5ee-e524-3096-55fc9e82e031"/>
+            <column name="TYPE_OF_EXPENSE_ID" value="a192f049-fa63-a85e-eb67-d998f76dafb2"/>
+            <column name="EMPLOYEE_ID" value="01b66c30-49d0-1c6c-83d8-03422acdb75e"/>
+            <column name="DATE_" value="2022-07-06"/>
+            <column name="AMOUNT" value="700"/>
+            <column name="DOCUMENT" value="fs://2022/07/06/d49b9daa-708d-45b8-e0a3-c1b76d6382b2.txt?name=ff.txt"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+        <insert tableName="EXPENSE" dbms="postgresql, mssql, hsqldb">
+            <column name="ID" value="56237be5-3b65-1333-aee6-1dc04e228c92"/>
+            <column name="TYPE_OF_EXPENSE_ID" value="a192f049-fa63-a85e-eb67-d998f76dafb2"/>
+            <column name="EMPLOYEE_ID" value="1246fdbe-f11e-2ce2-5863-fb7f428edfb6"/>
+            <column name="DATE_" value="2022-07-08"/>
+            <column name="AMOUNT" value="600"/>
+            <column name="DOCUMENT" value="fs://2022/07/06/d49b9daa-708d-45b8-e0a3-c1b76d6382b2.txt?name=ff.txt"/>
+            <column name="VERSION" value="1"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="CREATED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="LAST_MODIFIED_BY" value="null"/>
+            <column name="LAST_MODIFIED_DATE" value="2022-07-04 16:01:51.703"/>
+            <column name="DELETED_BY" value="null"/>
+            <column name="DELETED_DATE" value="null"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
