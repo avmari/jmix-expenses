@@ -23,25 +23,21 @@ public class ExpenseService {
     private DataManager dataManager;
 
     public boolean canProduceAnExpense(Expense expense){
-        UUID employeeId = expense.getEmployee().getId();
-        UUID typeOfExpense = expense.getTypeOfExpense().getId();
-        Integer amount = expense.getAmount();
-
         YearMonth month = YearMonth.from(expense.getDate());
         LocalDate start = month.atDay(1);
         LocalDate end = month.atEndOfMonth();
 
         Integer limitFunds = dataManager.load(TypeOfExpense.class)
-                .id(typeOfExpense).one().getFundsLimit();
+                .id(expense.getTypeOfExpense().getId()).one().getFundsLimit();
         Integer sumOfPreviousExpenses = dataManager.loadValue("select sum(ex.amount) from " +
-                "Expense ex where ex.employee.id = :employeeId and ex.typeOfExpense.id = :typeOfExpense and " +
+                "Expense ex where ex.employee.id = :employeeId and ex.typeOfExpense.id = :typeOfExpenseId and " +
                 "ex.date between :start and :end", Integer.class)
-                .parameter("employeeId", employeeId)
-                .parameter("typeOfExpense", typeOfExpense)
+                .parameter("employeeId", expense.getEmployee().getId())
+                .parameter("typeOfExpenseId", expense.getTypeOfExpense().getId())
                 .parameter("start", start)
                 .parameter("end", end)
                 .one();
-        if (sumOfPreviousExpenses == null && amount <= limitFunds || sumOfPreviousExpenses + amount <= limitFunds){
+        if (sumOfPreviousExpenses == null && expense.getAmount() <= limitFunds || sumOfPreviousExpenses + expense.getAmount() <= limitFunds){
             dataManager.save(expense);
             return true;
         }
